@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Handles - Order Delicious Food</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">🍔 Food Handles</div>
+            <div class="cart-section">
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒
+                    <span class="cart-count" id="cartCount">1</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search your favorite food..." onkeyup="searchFood()">
+        </div>
+
+        <div class="categories">
+            <button class="category-btn active" onclick="filterCategory('all')">All</button>
+            <button class="category-btn" onclick="filterCategory('pizza')">🍕 Pizza</button>
+            <button class="category-btn" onclick="filterCategory('burger')">🍔 Burger</button>
+            <button class="category-btn" onclick="filterCategory('pasta')">🍝 Pasta</button>
+            <button class="category-btn" onclick="filterCategory('dessert')">🍰 Dessert</button>
+            <button class="category-btn" onclick="filterCategory('drinks')">🥤 Drinks</button>
+        </div>
+
+        <div class="food-grid" id="foodGrid"></div>
+    </div>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <div class="cart-title">Your Cart</div>
+                <button class="close-btn" onclick="toggleCart()">×</button>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-total">
+                <div class="total-row">
+                    <span>Total:</span>
+                    <span id="totalPrice">₹0</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification success" id="notification">
+        <strong>Added to cart!</strong>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
